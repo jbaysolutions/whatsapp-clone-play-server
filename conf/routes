@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+#####  Web Client
+GET        /                             controllers.HomeController.index
+
+GET        /uuid/:uuid                   controllers.HomeController.getQRCode(uuid: String)
+
+GET        /ws                           controllers.HomeController.socket()
+
+GET        /session/auth                 controllers.HomeController.authenticateUser(mobileid:String, qrCode:String)
+
+GET        /session/msg                  controllers.HomeController.broadcastMessage(user:String, message:String)
+
+
+#####  Mobile
+
+GET        /session/mobile/auth          controllers.HomeController.authenticateMobileDevice(androidid:String, firebaseToken:String)
+
+GET        /session/mobile/assign        controllers.HomeController.assignMobileDevice(user:String, androidid:String, qrcode:String)
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET        /assets/*file                 controllers.Assets.versioned(path="/public", file: Asset)

@@ -1,0 +1,37 @@
+@(title: String)
+
+@main(title) {
+
+    <div class="page-header">
+      <h1>WhatsApp Web App Clone Tutorial</h1>
+    </div>
+
+
+    <div class="container" id="chatarea" style="display: none">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="list-group" id="product-filter-data">
+                    <div id="chatlist" style="height: 300px; max-height: 300px; overflow-y: scroll">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group">
+                    <input id="messageInput" type="text" class="form-control" placeholder="Say something...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button" onclick="sendMessage();">Send</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+    </div>
+
+
+    <div id="qrcodearea">
+        <img id="qrcode" src="">
+    </div>
+
+}
